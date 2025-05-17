@@ -1,5 +1,7 @@
 package com.example.estoque.controller;
 
+import com.example.estoque.domain.ItemPedido;
+import com.example.estoque.domain.Pedido;
 import com.example.estoque.domain.Produto;
 import com.example.estoque.service.ProdutoService;
 import com.fasterxml.jackson.databind.ObjectMapper; 
@@ -14,6 +16,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+
+import java.util.List;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -60,6 +64,30 @@ public class EstoqueControllerComponentTest {
                 MockMvcResultMatchers.content().string("Cadastrado com Sucesso"));
 
     }
+
+    @Test
+    public void givenValidPedido_whenAtualizaEstoque_thenReturnSuccess() throws Exception {
+        var produto = new Produto();
+        produto.setNome("Monitor");
+        produto.setDescricao("FullHD");
+        produto.setQtd(1);
+        produto.setPreco(500.0);
+
+        var pedido = new Pedido();
+        pedido.setItens(List.of());
+
+        Mockito.doNothing().when(service).atualizarEstoque(Mockito.any(Pedido.class));
+
+        mockMvc.perform(
+                        MockMvcRequestBuilders.post("/estoque/atualizar")
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .content(objectMapper.writeValueAsString(pedido))
+                )
+                .andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content().string("Estoque Atualizado"));
+    }
+
 
 
 }
