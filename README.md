@@ -17,7 +17,7 @@ Os testes foram escritos para consolidar o conhecimento em:
 - **JUnit 5**
 -  **Mockito**
 -  **Spring MockMvc**
-- 🛡 Boas práticas de organização de testes
+-  Boas práticas de organização de testes
 
 ##  Testes Implementados
 
@@ -42,7 +42,7 @@ Os testes foram escritos para consolidar o conhecimento em:
 - Spring Test (MockMvc)
 - Maven
 
-## 🚀 Como executar os testes
+##  Como executar os testes
 
 1. Clone este repositório:
    ```bash
