@@ -1,8 +1,8 @@
-# 📦 Projeto Estoque - Testes Automatizados com Spring Boot
+#  Projeto Estoque - Testes Automatizados com Spring Boot
 
 Este repositório foi criado com o objetivo de praticar testes automatizados utilizando **Spring Boot**, com foco em testes de **unidade**, **componente** e boas práticas de escrita de código testável.
 
-## 🔍 Objetivo
+##  Objetivo
 
 O projeto simula um sistema de controle de estoque básico, permitindo:
 
@@ -14,25 +14,25 @@ O projeto simula um sistema de controle de estoque básico, permitindo:
 
 Os testes foram escritos para consolidar o conhecimento em:
 
-- 🧪 **JUnit 5**
-- 🔧 **Mockito**
-- 🔍 **Spring MockMvc**
-- 🛡️ Boas práticas de organização de testes
+- **JUnit 5**
+-  **Mockito**
+-  **Spring MockMvc**
+- 🛡 Boas práticas de organização de testes
 
-## 🧪 Testes Implementados
+##  Testes Implementados
 
-### ✅ Controlador (`EstoqueController`)
+###  Controller (`EstoqueController`)
 - Cadastro de produto (`POST /estoque`)
 - Listagem de produtos (`GET /estoque`)
 - Busca por nome (`GET /estoque/{nome}`)
 - Atualização de estoque com sucesso (`POST /estoque/atualizar`)
 - Atualização de estoque com falha (exceção de estoque insuficiente)
 
-### ✅ Serviço (`ProdutoService`)
+###  Service (`ProdutoService`)
 - Cálculo de atualização de estoque baseado em pedido
 - Lançamento da exceção `ForaDeEstoqueException` quando necessário
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - Java 17+
 - Spring Boot
